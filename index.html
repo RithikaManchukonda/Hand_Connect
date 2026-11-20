@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HandConnect</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- MediaPipe Hands -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/hands.js"></script>
+
+    <!-- Camera utilities -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3.1675466862/camera_utils.js"></script>
+</head>
+
+<body>
+
+    <h1>HandConnect</h1>
+    <p>Real-Time AI Hand Tracking</p>
+
+    <!-- Camera container -->
+    <div class="camera-container">
+
+        <video id="webcam" autoplay playsinline muted></video>
+
+        <canvas id="drawingCanvas"></canvas>
+
+        <canvas id="handCanvas"></canvas>
+
+        <!-- Dashboard -->
+        <div id="hud">
+            <div>Hands: <span id="hudHands">0</span></div>
+            <div>Gestures: <span id="hudGestures">-</span></div>
+            <div>FPS: <span id="hudFPS">0</span></div>
+        </div>
+
+    </div>
+
+    <!-- Drawing controls -->
+    <div class="drawing-controls">
+
+        <button id="drawToggle">Drawing: OFF</button>
+
+        <label>
+            Brush Colour:
+            <input type="color" id="brushColor" value="#00ffff">
+        </label>
+
+        <button id="eraserToggle">Enable Eraser</button>
+
+        <button id="clearDrawing">Clear Drawing</button>
+
+        <button id="saveDrawing">Save Drawing</button>
+
+    </div>
+
+    <!-- Camera controls -->
+    <button id="startButton">Start Camera</button>
+
+    <p id="status">Camera is not started.</p>
+
+    <p id="handStatus">Hands detected: 0</p>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
